@@ -15,6 +15,10 @@
 #include <net/cnss_utils.h>
 #endif
 
+#if IS_ENABLED(CONFIG_CNSS_UTILS)
+#include <net/cnss_utils.h>
+#endif
+
 #include "bus.h"
 #include "debug.h"
 #include "main.h"
