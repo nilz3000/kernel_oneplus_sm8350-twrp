@@ -247,7 +247,7 @@ static ssize_t proc_gesture_control_write(struct file *file,
 		return count;
 	}
 
-	if ((ts->gesture_test_support && ts->gesture_test.flag)) {
+	if (ts->gesture_test_support && ts->gesture_test.flag) {
 		return count;
 	}
 
