@@ -16,6 +16,7 @@
 #include <linux/syscalls.h>
 
 #include <soc/oplus/system/oplus_project.h>
+#include <soc/oplus/cmdline_parser.h>
 
 #ifdef CONFIG_MTK_SECURITY_SW_SUPPORT
 #include <sec_boot_lib.h>
@@ -178,8 +179,7 @@ __setup("cdt_integrity=", cdt_setup);
 unsigned int get_project(void)
 {
     init_project_version();
-
-    return g_project? g_project->nDataBCDT.ProjectNo : 0;
+    return g_project? g_project->nDataBCDT.ProjectNo : get_cmdline_project_int();
 }
 EXPORT_SYMBOL(get_project);
 

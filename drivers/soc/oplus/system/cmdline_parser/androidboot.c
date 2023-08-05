@@ -20,6 +20,14 @@ EXPORT_SYMBOL(serial_no);
 EXPORT_SYMBOL(verified_bootstate);
 EXPORT_SYMBOL(prj_name);
 
+unsigned int get_cmdline_project_int(void)
+{
+    long ret = 0;
+    kstrtol(prj_name, 10, &ret);
+    return (unsigned int)ret;
+}
+EXPORT_SYMBOL(get_cmdline_project_int);
+
 module_param_string(startupmode, startup_mode, MAX_CMDLINE_PARAM_LEN,
 0600);
 MODULE_PARM_DESC(startupmode,
